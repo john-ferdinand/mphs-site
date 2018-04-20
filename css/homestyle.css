@@ -1,20 +1,20 @@
 body{
 	display: flex;
-
+	background-color: #007bb5;
 }
 
 div.c1{
-	width: 1025px;
+	width: 1200px;
 	height: 700px;
 	margin: 0 auto;
 	border: 1px solid black;
-	background-color: red;
+	/*background-color: red;*/
 }
 
 div.c2{
 	border: 1px solid black;
 	margin: 2px;
-	background-color: yellow;
+	background-color: #ffff00;
 	background-image: url("../assets/headerbg.png");
 }
 
@@ -52,12 +52,18 @@ div.c7{
 	
 }
 
+div.c9 {
+	border: 1px solid #000000;
+	margin: 3px;
+}
+
 div.c10{
-	
+	border: 1px solid #000000;
+	margin: 2px;
 }
 
 div.c11 img{
-	height: ;
+	height: auto;
 	width: auto;
 }
 
@@ -120,23 +126,38 @@ li{
 	border-right: 1px solid white;
 }
 
-li a:link{
+a {
+	color: #ffffff;
+}
+
+a:hover {
+
+}
+
+li a:link {
 	text-align: center;
 	padding: 14px 16px;
-	color: #ffffff;
 	text-decoration: none;
 }
 
-div.container-fluid-modified ul.nav li a:hover{
-	color: #f5c266;
-}
-
-div.container-fluid-modified ul.nav li a{
+.footer-wrapper {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #000000;
+	background-color: #262626;
 	color: #ffffff;
 }
 
-div.container-fluid-modified ul.nav li{
-	/*border: 1px solid black;*/
+.footer-wrapper-child1 {
+	padding: 1px;
+	order: 1;
+	border: 1px solid #000000;
+	margin: 1px;
+}
+
+div.footer-wrapper-child1 p {
+	padding: 0px;
+	margin: 0px;
 }
 
 
@@ -157,4 +178,52 @@ div.container-fluid-modified ul.nav li{
 .fa-facebook {
   background: #3B5998;
   color: white;
+}
+
+.icon-bar {
+	position: fixed;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+/* Style the icon bar links */
+.icon-bar a {
+	display: block;
+	text-align: center;
+	/*padding: 16px;*/
+	transition: all 0.3s ease;
+	color: white;
+	font-size: 20px;
+}
+
+/* Style the social media icons with color, if you want */
+.icon-bar a:hover {
+	background-color: #000;
+}
+
+.facebook {
+	background: #3B5998;
+	color: white;
+}
+
+.twitter {
+	background: #55ACEE;
+	color: white;
+}
+
+.google {
+	background: #dd4b39;
+	color: white;
+}
+
+.linkedin {
+	background: #007bb5;
+	color: white;
+}
+
+.youtube {
+	background: #bb0000;
+	color: white;
 }
