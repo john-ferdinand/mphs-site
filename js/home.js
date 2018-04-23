@@ -10,7 +10,9 @@ var admission = document.getElementById("admission");
 var facilities = document.getElementById("facilities");
 var contactUs = document.getElementById("contact-us");
 
-var container = document.getElementById("c9");
+var contentContainer = document.getElementById("content-container");
+
+
 
 homeLink.addEventListener("click", loadHome);
 ourSchoolLink.addEventListener("click", loadOurSchool);
@@ -19,26 +21,40 @@ facilitiesLink.addEventListener("click", loadFacilities);
 contactUsLink.addEventListener("click", loadContactUs);
 
 function loadHome() {
-	alert("Home");
-	container.innerHTML = carouselContainer.innerHTML;
+	//alert("Home");
+	contentContainer.innerHTML = carouselContainer.innerHTML;
 }
 
 function loadOurSchool(){
-	alert("Our School");
-	container.innerHTML = ourSchool.innerHTML;
+	//alert("Our School");
+	contentContainer.innerHTML = ourSchool.innerHTML;
 }
 
 function loadAdmission(){
-	alert("Admission");
-	container.innerHTML = admission.innerHTML;
+	//alert("Admission");
+	contentContainer.innerHTML = admission.innerHTML;
 }
 
 function loadFacilities(){
-	alert("Facilities");
-	container.innerHTML = facilities.innerHTML;
+	//alert("Facilities");
+	contentContainer.innerHTML = facilities.innerHTML;
 }
 
 function loadContactUs(){
-	alert("Contact Us");
-	container.innerHTML = contactUs.innerHTML;
+	//alert("Contact Us");
+	contentContainer.innerHTML = contactUs.innerHTML;
+}
+
+
+window.onscroll= function() {myFunction()};
+
+var header = document.getElementById("c2");
+var sticky = header.offsetTop;
+
+function myFunction() {
+    if (window.pageYOffset >= sticky) {
+        header.classList.add("sticky-style-for-header-container");
+    } else {
+        header.classList.remove("sticky-style-for-header-container");
+    }
 }

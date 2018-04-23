@@ -1,0 +1,12 @@
+body{
+    border: 1px solid #000000;
+    margin: 2px;
+}
+
+div.menu-content-container{
+    border: 1px solid #000000;
+    margin: 5px;
+}
+
+div.sidebar-container{
+}

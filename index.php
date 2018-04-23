@@ -1,10 +1,16 @@
+<?php
+include("dbUtil/dbconnection.php");
+include("daoimpl/AnnouncementDaoImpl.php");
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Mother of Perpetual Help School</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./css/homestyle.css">
+    <link rel="stylesheet" href="css/homestyle.css">
 
 </head>
 <body>
@@ -19,11 +25,11 @@
     <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
 </div>
 
-<div class="c1">
-    <div class="c2">
+<div class="top-container">
+    <div class="c2" id="c2">
         <div class="c3">
             <div class="c3_1">
-                <img src="./assets/mphslogo.png" alt="mphs logo"/>
+                <img src="assets/mphslogo.png" alt="mphs logo"/>
             </div>
             <!-- end of c3_1 -->
             <div class="c3_2">
@@ -34,7 +40,7 @@
         </div>
         <!-- end of c3 -->
 
-        <div class="c6">
+        <div class="navigation-bar">
             <ul id="navigation">
                 <li><a href="#" id="home-link">Home</a></li>
                 <li><a href="#" id="our-school-link">Our School</a></li>
@@ -44,13 +50,11 @@
             </ul>
         </div>
         <!-- end of c6 -->
-
     </div>
     <!-- end of c2 -->
 
     <div class="our-school" id="our-school">
         our school
-
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla, dolor in porttitor elementum, lacus
             neque ornare neque, eget consequat dui libero non nunc. Nulla sit amet maximus arcu. Phasellus vulputate
@@ -93,38 +97,29 @@
         contact us
     </div>
 
-    <div class="c9" id="c9">
+    <div class="content-container" id="content-container">
         <div class="c10" id="c10">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                    <li data-target="#myCarousel" data-slide-to="3"></li>
-                    <li data-target="#myCarousel" data-slide-to="4"></li>
-                    <li data-target="#myCarousel" data-slide-to="5"></li>
-                </ol>
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active c11">
-                        <img src="./assets/facility1.jpg" alt="">
+                        <img src="assets/facility1.jpg" alt="">
                     </div>
                     <div class="item c11">
-                        <img src="./assets/facility2.jpg" alt="">
+                        <img src="assets/facility2.jpg" alt="">
                     </div>
                     <div class="item c11">
-                        <img src="./assets/facility3.jpg" alt="">
+                        <img src="assets/facility3.jpg" alt="">
                     </div>
                     <div class="item c11">
-                        <img src="./assets/facility4.jpg" alt="">
+                        <img src="assets/facility4.jpg" alt="">
                     </div>
                     <div class="item c11">
-                        <img src="./assets/facility5.jpg" alt="">
+                        <img src="assets/facility5.jpg" alt="">
                     </div>
                     <div class="item c11">
-                        <img src="./assets/facility6.jpg" alt="">
+                        <img src="assets/facility6.jpg" alt="">
                     </div>
                 </div>
 
@@ -140,7 +135,44 @@
             </div>
         </div>
         <!-- end of carouselContainer -->
+    </div>
+    <!-- end of c9 -->
 
+    <div class="c13">
+        <div class="latest-news-and-announcement-container">
+            <div class="bottom-menu-label-container">
+                <label>Latest News and Announcement</label>
+            </div>
+            <div class="bottom-menu-content-container">
+                <?php
+                    $announcementDaoImpl = new AnnouncementDaoImpl($pdo);
+                    $announcementList = $announcementDaoImpl->getAllAnnouncementByMostRecent();
+                    foreach($announcementList as $key => $value)
+                    {
+                        echo "<h3>".$value->getTitle()."</h3>";
+                    }
+                ?>
+            </div>
+        </div>
+        <div class="events-calendar-container">
+            <div class="bottom-menu-label-container">
+                <label>Events Calendar</label>
+            </div>
+            <div class="bottom-menu-content-container">
+
+            </div>
+        </div>
+        <div class="quick-links-container">
+            <div class="bottom-menu-label-container">
+                <label>Quick Links</label>
+            </div>
+            <div class="bottom-menu-content-container">
+
+            </div>
+            <div>
+
+            </div>
+        </div>
 
     </div>
 
@@ -155,12 +187,12 @@
 
 
 </div>
-<!-- end of c1 -->
+<!-- end of top-contentContainer -->
 
 
-<script src="./js/jquery-3.3.1.min.js"></script>
-<script src="./js/bootstrap.min.js"></script>
-<script type="text/javascript" src="./js/home.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/home.js"></script>
 
 </body>
 </html>
